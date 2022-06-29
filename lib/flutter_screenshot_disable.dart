@@ -8,7 +8,7 @@ class FlutterScreenshotDisable {
   static const MethodChannel _methodChannel = MethodChannel("ru.rshb.flutter_screenshot_disable");
 
   /// Disabling screenshots is only supported on the Android platform
-  Future<void> disableScreenshot(bool disable) async {
+  static Future<void> disableScreenshot(bool disable) async {
     if (Platform.isAndroid) {
       return await _methodChannel.invokeMethod("disableScreenshot", {"disable": disable});
     }

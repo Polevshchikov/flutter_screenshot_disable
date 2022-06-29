@@ -21,9 +21,6 @@ class ExamplePage extends StatefulWidget {
 }
 
 class _ExamplePageState extends State<ExamplePage> {
-  // Initialize Plugin
-  final _plugin = FlutterScreenshotDisable();
-
   bool _disableScreenshot = false;
 
   @override
@@ -63,7 +60,7 @@ class _ExamplePageState extends State<ExamplePage> {
               onPressed: () async {
                 bool flag = !_disableScreenshot;
                 // Disable or allow screenshots
-                await _plugin.disableScreenshot(flag);
+                await FlutterScreenshotDisable.disableScreenshot(flag);
                 setState(() {
                   _disableScreenshot = flag;
                 });
